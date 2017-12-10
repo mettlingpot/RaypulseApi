@@ -13,7 +13,7 @@ use AppBundle\Entity\Credentials;
 class AuthTokenController extends Controller
 {
     /**
-     * @Rest\View()
+     * @Rest\View(statusCode=Response::HTTP_CREATED, serializerGroups={"auth-token"})
      * @Rest\Post("/auth-tokens")
      */
     public function postAuthTokensAction(Request $request)
@@ -58,7 +58,7 @@ class AuthTokenController extends Controller
     {
         return \FOS\RestBundle\View\View::create(['message' => 'Invalid credentials'], Response::HTTP_BAD_REQUEST);
     }
-    
+
     /**
      * @Rest\View(statusCode=Response::HTTP_NO_CONTENT)
      * @Rest\Delete("/auth-tokens/{id}")
