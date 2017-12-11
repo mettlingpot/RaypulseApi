@@ -1,7 +1,11 @@
 app:
-    resource: "@AppBundle/Controller/DefaultController.php"
-    type:     annotation
-
+    resource: "@AppBundle/Controller/"
+    type: rest
+    prefix: /api
+    
+api_login_check:
+    path: /api/login_check
+   
 places:
     type:     rest
     resource: AppBundle\Controller\PlaceController
